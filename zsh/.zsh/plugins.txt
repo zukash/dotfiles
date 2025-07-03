@@ -1,0 +1,8 @@
+rupa/z
+sindresorhus/pure
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting
+# marlonrichert/zsh-autocomplete
+# Aloxaf/fzf-tab
+# zsh-users/zsh-completions
+# jeffreytse/zsh-vi-mode

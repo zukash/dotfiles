@@ -1,27 +1,30 @@
-# PATH
-export PATH="$HOME/.poetry/bin:$PATH"
-export PATH="$HOME/dotfiles/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$PATH:$HOME/.lmstudio/bin"
+HISTSIZE=100000
+SAVEHIST=100000
+HISTFILE=~/.zsh_history
 
-# zplug
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
-source $ZPLUG_HOME/init.zsh
-zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "b4b4r07/enhancd", use:init.sh
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-completions"
-zplug load
+EDITOR='code -w'
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^o' edit-command-line
+
+# export
+export $(grep -v '^#' ~/.zsh/.env | xargs)
+
+# functions
+[ -f ~/.zsh/functions.zsh ] && source ~/.zsh/functions.zsh
+
+# path
+[ -f ~/.zsh/path.zsh ] && source ~/.zsh/path.zsh
 
 # alias
-alias ls='ls -G'
-alias gcd='cd $(ghq root)/$(ghq list | fzf)'
-alias docker-rmc='docker ps -a | tail -n +2 | fzf -m | awk "{print \$1}" | xargs -I{} docker rm {}'
-alias docker-rmi='docker images | tail -n +2 | fzf -m | awk "{print \$3}" | xargs -I{} docker rmi {}'
-alias mockcat='while true; do echo -e "HTTP/1.1 200 OK\n\n$(date)" | nc -l 1337; done'
-alias ting='afplay /System/Library/Sounds/Blow.aiff'
+[ -f ~/.zsh/alias.zsh ] && source ~/.zsh/alias.zsh
 
 # pyenv
 eval "$(pyenv init -)"
+
+# antidote
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+antidote load ${ZDOTDIR:-$HOME}/.zsh/plugins.txt
+
+# fzf
+source <(fzf --zsh)
