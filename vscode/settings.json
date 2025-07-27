@@ -1,0 +1,27 @@
+{
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.cwd": "${fileDirname}",
+  "python.defaultInterpreterPath": "~/.pyenv/shims/python",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Darcula Theme from IntelliJ",
+  "editor.accessibilitySupport": "off",
+  "github.copilot.advanced": {
+    "authProvider": "github"
+  },
+  "python.createEnvironment.trigger": "off",
+  "chat.agent.enabled": true,
+  "terminal.integrated.scrollback": 100000,
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "zenMode.fullScreen": false,
+  "zenMode.hideLineNumbers": false,
+  "editor.minimap.enabled": false,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "terminal.integrated.stickyScroll.enabled": true,
+  "python.terminal.activateEnvironment": false,
+  "gitlens.mode.active": "zen",
+  "diffEditor.ignoreTrimWhitespace": false,
+}

@@ -2,7 +2,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
 
-EDITOR='code -w'
+EDITOR='nvim'
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^o' edit-command-line
