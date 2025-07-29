@@ -18,22 +18,26 @@ zle -N fzf-z-search
 bindkey '^z' fzf-z-search
 
 function ghq-tmux() {
-  local repo_path session_name
+  if [ -n "$1" ]; then
+    repo_path="$1"
+  else
+    repo_path=$(ghq list -p | fzf-tmux -p) || return
+  fi
+  session_name=${repo_path#$(ghq root)/*/}   # org/repo
 
-  repo_path=$(ghq list -p | fzf-tmux -p) || return
-
-  local rel_path=${repo_path#$(ghq root)/}   # github.com/org/repo
-  local org_repo=${rel_path#*/}              # org/repo
-
-  local org=${org_repo%%/*}
-  local repo=${org_repo##*/}
-
-  session_name="[$org] $repo"
-
+  # Check if the session already exists
   tmux has-session -t "$session_name" 2>/dev/null
   if [ $? != 0 ]
   then
     tmux new-session -s "$session_name" -d -c "$repo_path"
   fi
-  tmux switch-client -t "$session_name"  
+
+  # Attach to the session or switch to it
+  if [ -z "$TMUX" ]; then
+    tmux attach-session -t "$session_name"
+  else
+    tmux switch-client -t "$session_name"  
+  fi
 }
+zle -N ghq-tmux
+bindkey '^g' ghq-tmux
