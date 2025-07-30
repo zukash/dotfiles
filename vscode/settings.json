@@ -1,10 +1,9 @@
 {
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.cwd": "${fileDirname}",
+  // "terminal.integrated.cwd": "${fileDirname}",
   "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
-  "workbench.colorTheme": "Darcula Theme from IntelliJ",
   "editor.accessibilitySupport": "off",
   "github.copilot.advanced": {
     "authProvider": "github"
@@ -22,6 +21,44 @@
   },
   "terminal.integrated.stickyScroll.enabled": true,
   "python.terminal.activateEnvironment": false,
-  "gitlens.mode.active": "zen",
   "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.profiles.osx": {
+    "tmux": {
+      "path": "zsh",
+      "args": [
+        "-c",
+        "tmux new-session -As $(basename $(dirname ${workspaceFolder}))/$(basename ${workspaceFolder})"
+      ],
+      "icon": "terminal-tmux"
+    }
+  },
+  "editor.fontFamily": "HackGen35 Console NF",
+  "custom-ui-style.font.sansSerif": "HackGen35 Console NF",
+  "window.title": " ",
+  "terminal.integrated.defaultProfile.osx": "tmux",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "Nord Frost",
+  "workbench.activityBar.location": "hidden",
+  "workbench.startupEditor": "none",
+  "workbench.tips.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.hidesExplorerArrows": true,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.renderIndentGuides": "none",
+  "workbench.tree.indent": 8,
+  "explorer.compactFolders": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.decorations.badges": false,
+  "window.zoomLevel": 2,
+  "window.customTitleBarVisibility": "never",
+  "editor.lineHeight": 2,
+  "editor.fontSize": 14,
+  "extensions.ignoreRecommendations": true,
+  "editor.lineNumbers": "relative",
+  "zenMode.restore": true,
 }
