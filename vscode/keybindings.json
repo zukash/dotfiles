@@ -202,5 +202,13 @@
     "key": "ctrl+`",
     "command": "-workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+g ctrl+c",
+    "command": "generateCommitMessageAndCommit"
+  },
+  {
+    "key": "ctrl+g ctrl+d",
+    "command": "git.viewChanges"
   }
 ]

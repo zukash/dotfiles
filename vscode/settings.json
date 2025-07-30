@@ -33,18 +33,15 @@
     }
   },
   "editor.fontFamily": "HackGen35 Console NF",
-  "custom-ui-style.font.sansSerif": "HackGen35 Console NF",
-  "window.title": " ",
+  // "custom-ui-style.font.sansSerif": "HackGen35 Console NF",
+  "window.title": "${folderName}",
   "terminal.integrated.defaultProfile.osx": "tmux",
-  "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
   "chat.commandCenter.enabled": false,
   "workbench.editor.enablePreview": false,
   "workbench.colorTheme": "Nord Frost",
   "workbench.activityBar.location": "hidden",
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
-  "breadcrumbs.enabled": false,
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.hidesExplorerArrows": true,
   "workbench.tree.enableStickyScroll": false,
@@ -55,10 +52,23 @@
   "explorer.confirmDelete": false,
   "explorer.decorations.badges": false,
   "window.zoomLevel": 2,
-  "window.customTitleBarVisibility": "never",
   "editor.lineHeight": 2,
   "editor.fontSize": 14,
   "extensions.ignoreRecommendations": true,
   "editor.lineNumbers": "relative",
   "zenMode.restore": true,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "breadcrumbs.enabled": false,
+  "workbench.panel.showLabels": false,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "コミットメッセージは日本語で記述し、冒頭にConventional Commits形式の要約、続けてファイルごとの具体的な変更内容を記載してください。"
+    }
+  ],
+  "multiCommand.commands": {
+    "generateCommitMessageAndCommit": {
+      "sequence": ["github.copilot.git.generateCommitMessage", "git.commit"]
+    }
+  }
 }

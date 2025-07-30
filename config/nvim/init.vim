@@ -11,4 +11,6 @@ inoremap <silent> <C-d> <Del>
 inoremap <silent> <C-k> <C-o>d$
 inoremap <C-q> <ESC>:wq<CR>
 nnoremap <C-q> :wq<CR>
+nnoremap y "+y
+vnoremap y "+y
 autocmd VimEnter * startinsert
