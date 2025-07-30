@@ -129,5 +129,6 @@
     "generateCommitMessageAndCommit": {
       "sequence": ["github.copilot.git.generateCommitMessage", "git.commit"]
     }
-  }
+  },
+  "zenMode.silentNotifications": false
 }

@@ -10,7 +10,7 @@ fzf-z-search() {
   if [ -n "$res" ]; then
     BUFFER+="cd $res"
     zle accept-line
-else
+  else
     return 1
   fi
 }
