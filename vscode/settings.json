@@ -236,6 +236,30 @@
           "name": "close other editors",
           "type": "command",
           "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "b",
+          "name": "bookmark",
+          "type": "command",
+          "command": "bookmarks.toggle"
+        },
+        {
+          "key": "B",
+          "name": "bookmark (labeled)",
+          "type": "command",
+          "command": "bookmarks.toggleLabeled"
+        },
+        {
+          "key": "l",
+          "name": "list bookmarks",
+          "type": "command",
+          "command": "bookmarks.list"
+        },
+        {
+          "key": "L",
+          "name": "list all bookmarks",
+          "type": "command",
+          "command": "bookmarks.listFromAllFiles"
         }
       ]
     }
