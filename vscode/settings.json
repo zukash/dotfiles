@@ -126,7 +126,6 @@
   "workbench.layoutControl.enabled": false,
   "gitlens.graph.layout": "editor",
   "zenMode.hideStatusBar": false,
-  "zenMode.showTabs": "single",
   // =================================
   // which-key設定
   // =================================
