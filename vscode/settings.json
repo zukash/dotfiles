@@ -31,7 +31,6 @@
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
   "workbench.editor.enablePreview": false,
-  "workbench.layoutControl.enabled": false,
   "workbench.panel.showLabels": false,
   "breadcrumbs.enabled": false,
 
@@ -46,7 +45,6 @@
   // =================================
   // ワークベンチ - ツリー表示
   // =================================
-  "workbench.tree.enableStickyScroll": false,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.tree.indent": 8,
   "material-icon-theme.hidesExplorerArrows": true,
@@ -56,7 +54,6 @@
   // =================================
   "window.title": "${folderName}",
   "window.zoomLevel": 2,
-  "window.commandCenter": false,
 
   // =================================
   // Zen Mode設定
@@ -101,9 +98,7 @@
   // =================================
   // GitHub Copilot設定
   // =================================
-  "github.copilot.advanced": {
-    "authProvider": "github"
-  },
+  "github.copilot.advanced": {},
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "コミットメッセージは日本語で記述し、冒頭にConventional Commits形式の要約、続けてファイルごとの具体的な変更内容を記載してください。"
@@ -125,10 +120,57 @@
   // =================================
   // カスタムコマンド
   // =================================
-  "multiCommand.commands": {
-    "generateCommitMessageAndCommit": {
-      "sequence": ["github.copilot.git.generateCommitMessage", "git.commit"]
+  "zenMode.silentNotifications": false,
+  "workbench.navigationControl.enabled": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "gitlens.graph.layout": "editor",
+  "zenMode.hideStatusBar": false,
+  "zenMode.showTabs": "single",
+  // =================================
+  // which-key設定
+  // =================================
+  "whichkey.bindings": [
+    {
+      "key": "g",
+      "name": "Git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "checkout",
+          "type": "command",
+          "command": "git.checkout"
+        },
+        {
+          "key": "d",
+          "name": "diff",
+          "type": "command",
+          "command": "git.viewChanges"
+        },
+        {
+          "key": "c",
+          "name": "commit",
+          "type": "commands",
+          "commands": [
+            "github.copilot.git.generateCommitMessage",
+            "git.commit",
+            "git.commitAmend" // コミットメッセージ 確認＆修正
+          ]
+        },
+        {
+          "key": "g",
+          "name": "graph",
+          "type": "command",
+          "command": "gitlens.showGraphPage"
+        },
+        {
+          "key": "x",
+          "name": "delete branch",
+          "type": "command",
+          "command": "git.deleteBranch"
+        }
+      ]
     }
-  },
-  "zenMode.silentNotifications": false
+  ]
 }

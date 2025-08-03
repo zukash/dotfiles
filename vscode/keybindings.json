@@ -194,14 +194,6 @@
     "command": "-workbench.action.quickOpenView"
   },
   {
-    "key": "ctrl+g ctrl+c",
-    "command": "generateCommitMessageAndCommit"
-  },
-  {
-    "key": "ctrl+g ctrl+d",
-    "command": "git.viewChanges"
-  },
-  {
     "key": "shift+cmd+f",
     "command": "workbench.action.quickTextSearch"
   },
@@ -213,5 +205,13 @@
     "key": "cmd+k",
     "command": "-workbench.action.terminal.clear",
     "when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled || accessibilityModeEnabled && accessibleViewIsShown && terminalHasBeenCreated && accessibleViewCurrentProviderId == 'terminal' || accessibilityModeEnabled && accessibleViewIsShown && terminalProcessSupported && accessibleViewCurrentProviderId == 'terminal'"
+  },
+  {
+    "key": "cmd+9",
+    "command": "workbench.action.openQuickChat"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "whichkey.show"
   }
 ]
