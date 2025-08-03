@@ -159,6 +159,30 @@
           ]
         },
         {
+          "key": "s",
+          "name": "stash",
+          "type": "command",
+          "command": "git.stash"
+        },
+        {
+          "key": "S",
+          "name": "pop stash",
+          "type": "command",
+          "command": "git.stashPop"
+        },
+        {
+          "key": "p",
+          "name": "push",
+          "type": "commands",
+          "commands": ["git.push", "gitlens.createPullRequestOnRemote"]
+        },
+        {
+          "key": "P",
+          "name": "pull",
+          "type": "command",
+          "command": "git.pull"
+        },
+        {
           "key": "g",
           "name": "graph",
           "type": "command",
