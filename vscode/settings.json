@@ -149,6 +149,12 @@
           "command": "git.viewChanges"
         },
         {
+          "key": "D",
+          "name": "diff (staged)",
+          "type": "command",
+          "command": "git.viewStagedChanges"
+        },
+        {
           "key": "c",
           "name": "commit",
           "type": "commands",
@@ -193,6 +199,43 @@
           "name": "delete branch",
           "type": "command",
           "command": "git.deleteBranch"
+        },
+        {
+          "key": "o",
+          "name": "open file on remote",
+          "type": "command",
+          "command": "gitlens.openFileOnRemote"
+        }
+      ]
+    },
+    {
+      "key": "e",
+      "name": "Editor",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "pin",
+          "type": "command",
+          "command": "workbench.action.pinEditor"
+        },
+        {
+          "key": "P",
+          "name": "unpin",
+          "type": "command",
+          "command": "workbench.action.unpinEditor"
+        },
+        {
+          "key": "x",
+          "name": "close",
+          "type": "command",
+          "command": "workbench.action.closeActivePinnedEditor"
+        },
+        {
+          "key": "X",
+          "name": "close other editors",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
         }
       ]
     }
