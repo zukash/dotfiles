@@ -10,3 +10,6 @@ stow -R vscode -t "$HOME/Library/Application Support/Code/User"
 #  code --list-extensions > ./vscode/extensions.txt
 cat ./vscode/extensions.txt | xargs -n 1 code --install-extension
 stow -R config -t $HOME/.config
+
+# https://github.com/zukash/mcpctl
+mcpctl apply -f ~/.config/mcpctl/mcp.json
