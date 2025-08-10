@@ -1,0 +1,21 @@
+{
+  "targets": [
+    {
+      "name": "claude-code",
+      "path": "~/.claude.json",
+      "key": "mcpServers"
+    },
+    {
+      "name": "github-copilot",
+      "path": "~/Library/Application Support/Code/User/mcp.json",
+      "key": "servers"
+    }
+  ],
+  "mcpServers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}
