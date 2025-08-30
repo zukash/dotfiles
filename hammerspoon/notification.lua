@@ -426,6 +426,11 @@ hs.hotkey.bind({"ctrl"}, "q",
                 print("h pressed - calling delete")
                 controller:delete()
             end),
+            -- NOTE: "ctrl + h" を "delete" に割り当てているので
+            hs.hotkey.bind({}, "delete", function()
+                print("delete pressed - calling delete")
+                controller:delete()
+            end),
             hs.hotkey.bind({"ctrl"}, "l", function()
                 print("l pressed - calling click")
                 controller:click()
@@ -448,5 +453,5 @@ hs.hotkey.bind({"ctrl"}, "q",
 print("Notification Center Keyboard Controller loaded!")
 print("Controls:")
 print("  Ctrl+Q: Press to Expand, Release to Collapse")
-print("  While holding Ctrl+Q, press j/k/h/l for quick actions:")
-print("    j: Down, k: Up, h: Delete, l: Click")
+print("  While holding Ctrl+Q, press j/k/h/l/Delete for quick actions:")
+print("    j: Down, k: Up, h/Delete: Delete, l: Click")
