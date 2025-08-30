@@ -1,9 +1,5 @@
 [
   {
-    "key": "ctrl+s ctrl+n",
-    "command": "editor.action.insertSnippet"
-  },
-  {
     "key": "ctrl+'",
     "command": "editor.action.openLink"
   },

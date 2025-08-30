@@ -9,7 +9,10 @@ stow -R zsh -t $HOME
 stow -R vscode -t "$HOME/Library/Application Support/Code/User"
 #  code --list-extensions > ./vscode/extensions.txt
 cat ./vscode/extensions.txt | xargs -n 1 code --install-extension
-stow -R config -t "$HOME/.config"
+stow -R karabiner -t "$HOME/.config/karabiner"
+stow -R mcpctl -t "$HOME/.config/mcpctl"
+stow -R nvim -t "$HOME/.config/nvim"
+stow -R tmux -t "$HOME/.config/tmux"
 stow -R hammerspoon -t "$HOME/.hammerspoon"
 
 # https://github.com/zukash/mcpctl
