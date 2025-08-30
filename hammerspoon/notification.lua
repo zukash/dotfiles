@@ -93,7 +93,9 @@ function NotificationController:getNotificationCards()
         
         -- 通知カードのみを選択（制御ボタンは除外）
         if role == "AXButton" and 
-           (subrole == "AXNotificationCenterAlert" or subrole == "AXNotificationCenterAlertStack") then
+           (subrole == "AXNotificationCenterAlert" or 
+            subrole == "AXNotificationCenterAlertStack" or 
+            subrole == "AXNotificationCenterBanner") then
             table.insert(notificationCards, element)
         end
     end
@@ -328,7 +330,10 @@ function NotificationController:delete()
         local desc = element:attributeValue("AXDescription") or ""
         local subrole = element:attributeValue("AXSubrole") or ""
         
-        if role == "AXButton" and subrole == "AXNotificationCenterAlert" then
+        if role == "AXButton" and 
+           (subrole == "AXNotificationCenterAlert" or 
+            subrole == "AXNotificationCenterAlertStack" or 
+            subrole == "AXNotificationCenterBanner") then
             table.insert(notificationButtons, element)
         end
     end
@@ -404,30 +409,33 @@ local longPressKeys = {}
 -- Ctrl+Q 長押し方式のキーバインド
 hs.hotkey.bind({"ctrl"}, "q", 
     function() -- pressed
+        -- Ctrl+Q を押したときに展開
+        controller:expand()
         
         -- 長押し中のキーバインドを登録（Ctrlキーも考慮）
         longPressKeys = {
             hs.hotkey.bind({"ctrl"}, "j", function()
+                print("j pressed - calling move down")
                 controller:move("down")
             end),
             hs.hotkey.bind({"ctrl"}, "k", function()
+                print("k pressed - calling move up")
                 controller:move("up")
             end),
             hs.hotkey.bind({"ctrl"}, "h", function()
-                controller:collapse()
+                print("h pressed - calling delete")
+                controller:delete()
             end),
             hs.hotkey.bind({"ctrl"}, "l", function()
-                controller:expand()
-            end),
-            hs.hotkey.bind({"ctrl"}, "o", function()
+                print("l pressed - calling click")
                 controller:click()
-            end),
-            hs.hotkey.bind({"ctrl"}, "i", function()
-                controller:delete()
             end)
         }
     end,
     function() -- released
+        -- Ctrl+Q を離したときに折りたたみ
+        controller:collapse()
+        
         -- 長押し中のキーバインドを削除
         for _, hotkey in ipairs(longPressKeys) do
             hotkey:delete()
@@ -436,7 +444,9 @@ hs.hotkey.bind({"ctrl"}, "q",
     end
 )
 
+
 print("Notification Center Keyboard Controller loaded!")
 print("Controls:")
-print("  Ctrl+Q: Hold and press j/k/h/l/o/i for quick actions")
-print("    j: Down, k: Up, h: Collapse, l: Expand, o: Click, i: Delete")
+print("  Ctrl+Q: Press to Expand, Release to Collapse")
+print("  While holding Ctrl+Q, press j/k/h/l for quick actions:")
+print("    j: Down, k: Up, h: Delete, l: Click")
