@@ -24,8 +24,6 @@ inoremap <silent> <C-d> <Del>
 inoremap <silent> <C-k> <C-o>d$
 inoremap <C-s> <ESC>:wq<CR>
 nnoremap <C-s> :wq<CR>
-nnoremap y "+y
-vnoremap y "+y
 autocmd VimEnter * startinsert
 
 set termguicolors
