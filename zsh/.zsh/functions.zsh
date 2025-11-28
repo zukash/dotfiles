@@ -1,3 +1,4 @@
+# Send notification to Discord
 notify() {
   local message="$*"
   curl -H "Content-Type: application/json" \
@@ -5,6 +6,7 @@ notify() {
        "$DISCORD_WEBHOOK_URL"
 }
 
+# FZF integration with z for directory jumping
 fzf-z-search() {
   local res=$(z | sort -rn | cut -c 12- | fzf-tmux -p)
   if [ -n "$res" ]; then
@@ -14,10 +16,9 @@ fzf-z-search() {
     return 1
   fi
 }
-zle -N fzf-z-search
-bindkey '^z' fzf-z-search
 
-function ghq-tmux() {
+# GHQ integration with tmux for project management
+ghq-tmux() {
   if [ -n "$1" ]; then
     repo_path="$1"
   else
@@ -39,5 +40,3 @@ function ghq-tmux() {
     tmux switch-client -t "$session_name"  
   fi
 }
-zle -N ghq-tmux
-bindkey '^g' ghq-tmux
