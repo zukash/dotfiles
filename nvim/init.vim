@@ -11,6 +11,7 @@ call plug#end()
 
 set number
 set laststatus=0
+set fillchars=eob:\ 
 
 inoremap <silent> <C-p> <Up>
 inoremap <silent> <C-n> <Down>

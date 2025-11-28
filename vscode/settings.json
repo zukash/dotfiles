@@ -11,7 +11,6 @@
   "editor.wordWrap": "on",
   "editor.accessibilitySupport": "off",
   "editor.minimap.enabled": false,
-  "editor.lineNumbers": "relative",
   "diffEditor.ignoreTrimWhitespace": false,
 
   // =================================
@@ -30,7 +29,6 @@
   "workbench.activityBar.location": "hidden",
   "workbench.startupEditor": "none",
   "workbench.tips.enabled": false,
-  "workbench.editor.enablePreview": false,
   "workbench.panel.showLabels": false,
   "breadcrumbs.enabled": false,
 
@@ -66,7 +64,7 @@
   // ターミナル設定
   // =================================
   "terminal.integrated.scrollback": 100000,
-  "terminal.integrated.stickyScroll.enabled": true,
+  "terminal.integrated.stickyScroll.enabled": false,
   "terminal.integrated.defaultProfile.osx": "tmux",
   "terminal.integrated.profiles.osx": {
     "tmux": {
@@ -122,8 +120,6 @@
   // =================================
   "zenMode.silentNotifications": false,
   "workbench.navigationControl.enabled": false,
-  "window.commandCenter": false,
-  "workbench.layoutControl.enabled": false,
   "gitlens.graph.layout": "editor",
   "zenMode.hideStatusBar": false,
   // =================================
@@ -165,15 +161,9 @@
         },
         {
           "key": "s",
-          "name": "stash",
+          "name": "source control",
           "type": "command",
-          "command": "git.stash"
-        },
-        {
-          "key": "S",
-          "name": "pop stash",
-          "type": "command",
-          "command": "git.stashPop"
+          "command": "workbench.scm.focus"
         },
         {
           "key": "p",
@@ -261,6 +251,44 @@
           "command": "bookmarks.listFromAllFiles"
         }
       ]
+    },
+    {
+      "key": "c",
+      "name": "Copy",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "path",
+          "type": "command",
+          "command": "copyRelativeFilePath"
+        },
+        {
+          "key": "P",
+          "name": "absolute path",
+          "type": "command",
+          "command": "copyFilePath"
+        }
+      ]
     }
-  ]
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "explorer.confirmPasteNative": false,
+  "multiCommand.commands": [
+    {
+      "command": "multiCommand.openLinkOrGoToDefinition",
+      "sequence": ["editor.action.openLink", "editor.action.revealDefinition"]
+    }
+  ],
+  "editor.formatOnPaste": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.preserveFocus": false,
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": true,
+  "workbench.editor.enablePreview": false,
+  "gitlens.views.commitDetails.files.layout": "tree"
 }
