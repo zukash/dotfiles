@@ -1,6 +1,9 @@
 HISTSIZE=100000
 SAVEHIST=100000
 HISTFILE=~/.zsh_history
+setopt HIST_IGNORE_DUPS      # 重複コマンドを履歴に保存しない
+setopt HIST_IGNORE_SPACE     # スペースで始まるコマンドを履歴に保存しない
+setopt SHARE_HISTORY         # 複数セッション間で履歴を共有
 
 EDITOR='nvim'
 autoload -Uz edit-command-line
@@ -9,24 +12,34 @@ bindkey '^o' edit-command-line
 
 # fzf
 source <(fzf --zsh)
-export FZF_TMUX=1
-export FZF_TMUX_OPTS="-p 80%"
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+
+# helper function
+source_if_exists() {
+  [ -f "$1" ] && source "$1"
+}
 
 # export environment variables from .env
 set -a
-[ -f ~/.zsh/.env ] && source ~/.zsh/.env
+source_if_exists ~/.zsh/.env
 set +a
 
-# functions
-[ -f ~/.zsh/functions.zsh ] && source ~/.zsh/functions.zsh
-
-# path
-[ -f ~/.zsh/path.zsh ] && source ~/.zsh/path.zsh
-
-# alias
-[ -f ~/.zsh/alias.zsh ] && source ~/.zsh/alias.zsh
+# functions, path, alias
+source_if_exists ~/.zsh/functions.zsh
+source_if_exists ~/.zsh/path.zsh
+source_if_exists ~/.zsh/alias.zsh
 
 # antidote
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
-antidote load ${ZDOTDIR:-$HOME}/.zsh/plugins.txt
+
+# Load plugins dynamically
+source <(antidote bundle rupa/z)
+source <(antidote bundle sindresorhus/pure)
+source <(antidote bundle zsh-users/zsh-autosuggestions)
+source <(antidote bundle zsh-users/zsh-syntax-highlighting)
+
+# prompt
+autoload -U promptinit; promptinit
+prompt pure
+
+# completion
+autoload -Uz compinit && compinit
