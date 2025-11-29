@@ -225,5 +225,13 @@
   {
     "key": "cmd+enter",
     "command": "code-runner.run"
+  },
+  {
+    "key": "shift+cmd+=",
+    "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "shift+cmd+-",
+    "command": "workbench.action.decreaseViewSize"
   }
 ]
