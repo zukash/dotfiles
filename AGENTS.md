@@ -1,13 +1,16 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS. Configurations for: zsh, vscode, hammerspoon, karabiner, nvim, tmux, opencode, ghostty.
+This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, vscode, hammerspoon (macOS only), karabiner (macOS only), nvim, tmux, opencode, ghostty.
 
-## Installation/Setup Commands
-- Install dependencies: `brew install stow fzf` and `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote`
-- Deploy dotfiles: `stow -R <folder> -t <target>` (see installer.sh:8-16 for specific targets)
-- VSCode extensions: `cat ./vscode/extensions.txt | xargs -n 1 code --install-extension`
-- List VSCode extensions: `code --list-extensions > ./vscode/extensions.txt`
+## Setup Commands
+- macOS: `./setup_mac.sh`
+- Linux: `./setup_linux.sh`
+- Deploy specific config manually: `stow -R <folder> -t <target>`
+  - See setup_mac.sh and setup_linux.sh for platform-specific target paths
+
+## Repository Responsibility
+This repository is responsible ONLY for deploying dotfiles to appropriate locations. Tool installation (stow, fzf, antidote, etc.) is NOT managed by this repository and should be done manually by users.
 
 ## Testing/Validation
 No automated tests. Manual validation: source configs and check for errors.
@@ -15,8 +18,9 @@ No automated tests. Manual validation: source configs and check for errors.
 ## Documentation Maintenance
 When adding new configurations or making significant changes:
 - Update README.md to reflect new tools/configurations
-- Update installer.sh with appropriate stow commands
+- Update setup_mac.sh and/or setup_linux.sh with appropriate stow commands
 - Update this file (AGENTS.md) with relevant guidelines
+- ALWAYS update documentation when modifying setup scripts or structure
 
 ## Code Style Guidelines
 

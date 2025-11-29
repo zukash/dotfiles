@@ -1,45 +1,39 @@
 # dotfiles
 
-macOS dotfiles managed with GNU Stow.
+Dotfiles managed with GNU Stow for macOS and Linux.
 
 ## Prerequisites
 
+### macOS
 ```sh
 brew install stow fzf
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 ```
 
-## Installation
-
-Run the installer script:
-
+### Linux
 ```sh
-./installer.sh
+# Ubuntu/Debian
+sudo apt install stow fzf
+
+# Fedora
+sudo dnf install stow fzf
+
+# Arch
+sudo pacman -S stow fzf
+
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 ```
 
-Or manually deploy specific configurations:
+## Setup
+
+Run the setup script:
 
 ```sh
-stow -R zsh -t $HOME
-stow -R vscode -t "$HOME/Library/Application Support/Code/User"
-stow -R karabiner -t "$HOME/.config/karabiner"
-stow -R nvim -t "$HOME/.config/nvim"
-stow -R tmux -t "$HOME/.config/tmux"
-stow -R hammerspoon -t "$HOME/.hammerspoon"
-stow -R opencode -t "$HOME/.config/opencode"
-stow -R ghostty -t "$HOME/.config/ghostty"
-```
+# macOS
+./setup_mac.sh
 
-## VSCode Extensions
-
-Install extensions:
-```sh
-cat ./vscode/extensions.txt | xargs -n 1 code --install-extension
-```
-
-Update extension list:
-```sh
-code --list-extensions > ./vscode/extensions.txt
+# Linux
+./setup_linux.sh
 ```
 
 ## Configurations Included
