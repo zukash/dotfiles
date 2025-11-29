@@ -1,0 +1,42 @@
+# Ghostty Configuration
+
+# Theme
+theme = nord
+
+# Font
+font-family = HackGen35 Console NF
+font-size = 20
+
+# Window
+window-padding-x = 5
+window-padding-y = 5
+
+# Transparency & Effects
+background-opacity = 0.9
+background-blur = 0
+
+# Behavior
+clipboard-read = allow
+clipboard-write = allow
+
+# Shell integration
+shell-integration = detect
+
+# Quick Terminal (Dropdown Terminal)
+quick-terminal-position = right
+quick-terminal-size = 50%, 100%
+quick-terminal-animation-duration = 0.2
+quick-terminal-autohide = true
+
+# macOS Fullscreen (fast, no animation)
+macos-non-native-fullscreen = true
+
+# macOS Titlebar (hidden for clean look)
+macos-titlebar-style = hidden
+
+# Keybindings
+keybind = super+r=reload_config
+# Open config in nvim via tmux popup
+keybind = super+comma=text:nvim ~/.config/ghostty/config\x0d
+# Toggle quick terminal (global shortcut)
+keybind = global:alt+space=toggle_quick_terminal

@@ -14,6 +14,8 @@ stow -R mcpctl -t "$HOME/.config/mcpctl"
 stow -R nvim -t "$HOME/.config/nvim"
 stow -R tmux -t "$HOME/.config/tmux"
 stow -R hammerspoon -t "$HOME/.hammerspoon"
+stow -R opencode -t "$HOME/.config/opencode"
+stow -R ghostty -t "$HOME/.config/ghostty"
 
 # https://github.com/zukash/mcpctl
 mcpctl apply -f ~/.config/mcpctl/mcp.json

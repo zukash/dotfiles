@@ -26,3 +26,10 @@ source <(antidote bundle zsh-users/zsh-syntax-highlighting)   # Syntax highlight
 # ============================================================================
 source <(fzf --zsh)
 autoload -Uz compinit && compinit
+
+# bun completions
+[ -s "/Users/zukash/.bun/_bun" ] && source "/Users/zukash/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
