@@ -1,7 +1,7 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS. Configurations for: zsh, vscode, hammerspoon, karabiner, nvim, tmux.
+This is a dotfiles repository managed with GNU Stow for macOS. Configurations for: zsh, vscode, hammerspoon, karabiner, nvim, tmux, opencode, ghostty.
 
 ## Installation/Setup Commands
 - Install dependencies: `brew install stow fzf` and `git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote`
@@ -11,6 +11,12 @@ This is a dotfiles repository managed with GNU Stow for macOS. Configurations fo
 
 ## Testing/Validation
 No automated tests. Manual validation: source configs and check for errors.
+
+## Documentation Maintenance
+When adding new configurations or making significant changes:
+- Update README.md to reflect new tools/configurations
+- Update installer.sh with appropriate stow commands
+- Update this file (AGENTS.md) with relevant guidelines
 
 ## Code Style Guidelines
 
