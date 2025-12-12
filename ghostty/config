@@ -23,9 +23,9 @@ clipboard-write = allow
 shell-integration = detect
 
 # Quick Terminal (Dropdown Terminal)
-quick-terminal-position = right
-quick-terminal-size = 50%, 100%
-quick-terminal-animation-duration = 0.2
+quick-terminal-position = top
+quick-terminal-size = 100%, 100%
+quick-terminal-animation-duration = 0.1
 quick-terminal-autohide = true
 
 # macOS Fullscreen (fast, no animation)
@@ -40,3 +40,4 @@ keybind = super+r=reload_config
 keybind = super+comma=text:nvim ~/.config/ghostty/config\x0d
 # Toggle quick terminal (global shortcut)
 keybind = global:alt+space=toggle_quick_terminal
+

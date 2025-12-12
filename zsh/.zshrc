@@ -8,6 +8,7 @@ set +a
 source ~/.zsh/options.zsh
 source ~/.zsh/path.zsh
 source ~/.zsh/functions.zsh
+source ~/.zsh/hooks.zsh
 source ~/.zsh/keybindings.zsh
 source ~/.zsh/alias.zsh
 

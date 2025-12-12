@@ -27,6 +27,7 @@ When adding new configurations or making significant changes:
 ### Shell Scripts (zsh)
 - Use functions for reusable logic (see zsh/.zsh/functions.zsh)
 - Keep aliases simple and in alias.zsh
+- Shell hooks (precmd, preexec, etc.) in hooks.zsh
 - Environment variables in .env (gitignored), load via `export $(grep -v '^#' ~/.zsh/.env | xargs)`
 - Prefer fzf-tmux for interactive selections with `-p 80%` flag
 
