@@ -11,5 +11,7 @@ stow -R tmux -t "$HOME/.config/tmux"
 stow -R hammerspoon -t "$HOME/.hammerspoon"
 stow -R opencode -t "$HOME/.config/opencode"
 stow -R ghostty -t "$HOME/.config/ghostty"
+stow -R aerospace -t "$HOME/.config/aerospace"
+
 
 echo "Deployment complete!"

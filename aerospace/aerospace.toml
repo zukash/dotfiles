@@ -1,0 +1,91 @@
+config-version = 2
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0'
+]
+start-at-login = true
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# Layouts
+accordion-padding = 30
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+# Mouse follows focus
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# Disable macOS hide app feature
+automatically-unhide-macos-hidden-apps = false
+
+# Persistent workspaces
+persistent-workspaces = ["1", "2", "3", "4", "A", "B"]
+
+# Workspace to monitor assignment
+[workspace-to-monitor-force-assignment]
+    1 = 'main'
+    2 = 'main'
+    3 = 'main'
+    4 = 'main'
+    A = 'built-in'
+    B = 'built-in'
+
+on-mode-changed = []
+
+[key-mapping]
+    preset = 'qwerty'
+
+# Gaps between windows
+[gaps]
+    inner.horizontal = 7
+    inner.vertical =   7
+    outer.left =       7
+    outer.bottom =     7
+    outer.top =        7
+    outer.right =      7
+
+[mode.main.binding]
+    # Layout
+    alt-ctrl-shift-slash = 'layout tiles horizontal vertical'
+    alt-ctrl-shift-comma = 'layout accordion horizontal vertical'
+
+    # Focus
+    alt-ctrl-shift-h = 'focus left'
+    alt-ctrl-shift-j = 'focus down'
+    alt-ctrl-shift-k = 'focus up'
+    alt-ctrl-shift-l = 'focus right'
+
+    # Move
+    cmd-alt-ctrl-shift-h = 'move left'
+    cmd-alt-ctrl-shift-j = 'move down'
+    cmd-alt-ctrl-shift-k = 'move up'
+    cmd-alt-ctrl-shift-l = 'move right'
+
+    # Resize
+    alt-ctrl-shift-minus = 'resize smart -50'
+    alt-ctrl-shift-equal = 'resize smart +50'
+
+    # Fullscreen
+    alt-ctrl-shift-enter = 'fullscreen'
+
+    # Reload and reset layout
+    alt-ctrl-shift-r = ['reload-config', 'flatten-workspace-tree']
+
+    # Workspace
+    alt-ctrl-shift-y = 'workspace 1'
+    alt-ctrl-shift-u = 'workspace 2'
+    alt-ctrl-shift-i = 'workspace 3'
+    alt-ctrl-shift-o = 'workspace 4'
+    alt-ctrl-shift-n = 'workspace A'
+    alt-ctrl-shift-m = 'workspace B'
+
+    # Move to workspace
+    cmd-alt-ctrl-shift-y = 'move-node-to-workspace 1'
+    cmd-alt-ctrl-shift-u = 'move-node-to-workspace 2'
+    cmd-alt-ctrl-shift-i = 'move-node-to-workspace 3'
+    cmd-alt-ctrl-shift-o = 'move-node-to-workspace 4'
+    cmd-alt-ctrl-shift-n = 'move-node-to-workspace A'
+    cmd-alt-ctrl-shift-m = 'move-node-to-workspace B'
+

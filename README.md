@@ -48,3 +48,4 @@ Run the setup script:
 - **hammerspoon**: macOS automation scripts
 - **opencode**: OpenCode AI assistant configuration
 - **ghostty**: Terminal emulator configuration
+- **aerospace**: Window manager configuration
