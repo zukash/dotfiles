@@ -93,6 +93,15 @@ k.writeToProfile("Default profile", [
         },
       })
       .to({ key_code: "page_down" }),
+    // Control+[ -> Escape
+    k
+      .map({
+        key_code: "open_bracket",
+        modifiers: {
+          mandatory: ["control"],
+        },
+      })
+      .to({ key_code: "escape" }),
   ]),
 
   k.rule("Tap CMD to toggle Kana/Eisuu").manipulators([
@@ -109,7 +118,9 @@ k.writeToProfile("Default profile", [
     ),
   ]),
 
-  k.rule("C-s to Meh").manipulators([k.map("s", "⌃").toMeh()]),
+  k
+    .rule("C-s to Meh")
+    .manipulators([k.map("s", "⌃").toMeh().toIfAlone("s", "⌃")]),
 
   k
     .rule("ctrl + s + ?")
