@@ -181,7 +181,7 @@
           "key": "g",
           "name": "graph",
           "type": "command",
-          "command": "gitlens.showGraphPage"
+          "command": "git-graph.view"
         },
         {
           "key": "x",
