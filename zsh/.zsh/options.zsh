@@ -1,5 +1,5 @@
 # Environment variables
-EDITOR='tmux popup -E nvim'
+EDITOR='tmux popup -E -w 80% -h 80% nvim'
 
 # History configuration
 HISTSIZE=100000
