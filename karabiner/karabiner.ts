@@ -25,19 +25,24 @@ writeToProfile("Default profile", [
   // Emacs-like key bindings
   rule("zukash key bindings").manipulators([
     map("d", "⌃", "⇧").to("delete_forward").condition(ifNotTerminal),
-    map("h", "⌃", "⇧").to("delete_or_backspace"),
-    map("b", "⌃", "⇧").to("left_arrow"),
-    map("f", "⌃", "⇧").to("right_arrow"),
-    map("n", "⌃", "⇧").to("down_arrow"),
-    map("p", "⌃", "⇧").to("up_arrow"),
+    map("h", "⌃", "⇧").to("delete_or_backspace").condition(ifNotTerminal),
+    map("b", "⌃", "⇧").to("left_arrow").condition(ifNotTerminal),
+    map("f", "⌃", "⇧").to("right_arrow").condition(ifNotTerminal),
+    map("n", "⌃", "⇧").to("down_arrow").condition(ifNotTerminal),
+    map("p", "⌃", "⇧").to("up_arrow").condition(ifNotTerminal),
     map("n", "⌘⌃", "⇧").to("page_down"),
     map("p", "⌘⌃", "⇧").to("page_up"),
     map("[", "⌃").to("escape"),
   ]),
 
-  // Command key to switch input source
+  // Command key to switch input source when pressed alone
   rule("⌘ → EN/JP").manipulators([
     map("l⌘", "?any").to("l⌘", [], { lazy: true }).toIfAlone("japanese_eisuu"),
     map("r⌘", "?any").to("r⌘", [], { lazy: true }).toIfAlone("japanese_kana"),
+  ]),
+
+  // Control key to escape when pressed alone
+  rule("control → escape").manipulators([
+    map("left_control", "?any").to("left_control", [], { lazy: true }).toIfAlone("escape"),
   ]),
 ]);
