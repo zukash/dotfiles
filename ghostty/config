@@ -5,14 +5,15 @@ theme = nord
 
 # Font
 font-family = HackGen35 Console NF
-font-size = 20
+font-size = 18
+adjust-cell-height = 30%
 
 # Window
 window-padding-x = 5
 window-padding-y = 5
 
 # Transparency & Effects
-background-opacity = 0.9
+background-opacity = 0.95
 background-blur = 0
 
 # Behavior
