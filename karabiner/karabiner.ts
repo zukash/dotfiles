@@ -43,6 +43,9 @@ writeToProfile("Default profile", [
 
   // Control key to escape when pressed alone
   rule("control → escape").manipulators([
-    map("left_control", "?any").to("left_control", [], { lazy: true }).toIfAlone("escape"),
+    map("left_control", "?any")
+      .to("left_control", [], { lazy: true })
+      .toIfAlone("escape")
+      .parameters({ "basic.to_if_alone_timeout_milliseconds": 150 }),
   ]),
 ]);
