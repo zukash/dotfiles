@@ -22,7 +22,7 @@ ghq-tmux() {
   if [ -n "$1" ]; then
     repo_path="$1"
   else
-    repo_path=$(ghq list -p | fzf-tmux -p) || return
+    repo_path=$(ghq list -p | fzf-tmux -p 80%) || return
   fi
   session_name=${repo_path#$(ghq root)/*/}   # org/repo
 
@@ -39,4 +39,13 @@ ghq-tmux() {
   else
     tmux switch-client -t "$session_name"  
   fi
+}
+
+pane-view() {
+  local f=$(mktemp)
+  trap "rm -f $f" EXIT INT HUP TERM
+
+  tmux capture-pane -e -J -pS - | perl -0777 -pe 's/\s+$/\n/' > "$f"
+  
+  nvim -c "term cat $f" -c "set relativenumber laststatus=0 | norm! G"
 }
