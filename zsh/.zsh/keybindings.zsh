@@ -10,3 +10,7 @@ bindkey '^z' fzf-z-search
 # GHQ + tmux integration
 zle -N ghq-tmux
 bindkey '^g' ghq-tmux
+
+# zsh-flash
+# https://github.com/zukash/zsh-flash
+bindkey '^j' zsh-flash

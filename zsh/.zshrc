@@ -21,6 +21,7 @@ source <(antidote bundle rupa/z)                              # Directory jumpin
 source <(antidote bundle sindresorhus/pure)                   # Prompt theme
 source <(antidote bundle zsh-users/zsh-autosuggestions)       # Command suggestions
 source <(antidote bundle zsh-users/zsh-syntax-highlighting)   # Syntax highlighting
+source <(antidote bundle zukash/zsh-flash)                    # Jump-label navigation
 
 # ============================================================================
 # Integrations
