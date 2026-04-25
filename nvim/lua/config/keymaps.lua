@@ -1,14 +1,18 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- ========================================
+-- Session management
+-- ========================================
+vim.keymap.set({ "n", "v" }, "<C-x>", ":qa<CR>") -- quit all
+vim.keymap.set("i", "<C-x>", "<ESC>:qa<CR>") -- quit all
 
 -- ========================================
 -- Emacs-like editing (movement + kill)
 -- ========================================
-vim.keymap.set("i", "<C-p>", "<Up>") -- previous line
-vim.keymap.set("i", "<C-n>", "<Down>") -- next line
-vim.keymap.set("i", "<C-f>", "<Right>") -- forward char
-vim.keymap.set("i", "<C-b>", "<Left>") -- backward char
+vim.keymap.set({ "i", "n", "v" }, "<C-p>", "<Up>") -- previous line
+vim.keymap.set({ "i", "n", "v" }, "<C-n>", "<Down>") -- next line
+vim.keymap.set({ "i", "n", "v" }, "<C-f>", "<Right>") -- forward char
+vim.keymap.set({ "i", "n", "v" }, "<C-b>", "<Left>") -- backward char
 
 vim.keymap.set({ "i", "n", "v" }, "<C-a>", "<Home>") -- beginning of line
 vim.keymap.set({ "i", "n", "v" }, "<C-e>", "<End>") -- end of line
