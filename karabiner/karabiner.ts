@@ -30,9 +30,10 @@ writeToProfile("Default profile", [
     map("f", "⌃", "⇧").to("right_arrow").condition(ifNotTerminal),
     map("n", "⌃", "⇧").to("down_arrow").condition(ifNotTerminal),
     map("p", "⌃", "⇧").to("up_arrow").condition(ifNotTerminal),
+    // map("n", "⌘⌃", "⇧").to(Array(10).fill({ key_code: "down_arrow" })),
+    // map("p", "⌘⌃", "⇧").to(Array(10).fill({ key_code: "up_arrow" })),
     map("n", "⌘⌃", "⇧").to("page_down"),
     map("p", "⌘⌃", "⇧").to("page_up"),
-    map("[", "⌃").to("escape"),
   ]),
 
   // Command key to switch input source when pressed alone
