@@ -43,9 +43,11 @@ ghq-tmux() {
 
 pane-view() {
   local f=$(mktemp)
-  trap "rm -f $f" EXIT INT HUP TERM
-
   tmux capture-pane -e -J -pS - | perl -0777 -pe 's/\s+$/\n/' > "$f"
-  
-  nvim -c "term cat $f" -c "set relativenumber laststatus=0 | norm! G"
+
+  tmux new-window -a "nvim \
+    -c 'terminal cat \"$f\"' \
+    -c 'set relativenumber' \
+    -c 'normal! G' \
+    -c 'autocmd VimLeave * call delete(\"$f\")'"
 }
