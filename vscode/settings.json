@@ -58,14 +58,14 @@
   // =================================
   "zenMode.fullScreen": false,
   "zenMode.hideLineNumbers": false,
-  "zenMode.restore": true,
+  "zenMode.restore": false,
 
   // =================================
   // ターミナル設定
   // =================================
   "terminal.integrated.scrollback": 100000,
   "terminal.integrated.stickyScroll.enabled": false,
-  "terminal.integrated.defaultProfile.osx": "tmux",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.profiles.osx": {
     "tmux": {
       "path": "zsh",
@@ -294,5 +294,15 @@
   "diffEditor.hideUnchangedRegions.enabled": true,
   "[c]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "zenMode.showTabs": "single",
+  "workbench.browser.showInTitleBar": false,
+  // https://github.com/vscode-neovim/vscode-neovim/discussions/2514
+  "editor.allowVariableFontsInAccessibilityMode": true,
+  "vscode-neovim.highlightGroups.highlights": {
+    "FlashLabel": {
+      "color": "theme.gitDecoration.addedResourceForeground",
+      "backgroundColor": "theme.editor.background"
+    }
   }
 }
