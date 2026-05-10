@@ -42,12 +42,17 @@ ghq-tmux() {
 }
 
 pane-view() {
-  local f=$(mktemp)
+  local f=$(mktemp) s=$(mktemp)
   tmux capture-pane -e -J -pS - | perl -0777 -pe 's/\s+$/\n/' > "$f"
-
-  tmux new-window -a "nvim \
-    -c 'terminal cat \"$f\"' \
-    -c 'set relativenumber' \
-    -c 'normal! G' \
-    -c 'autocmd VimLeave * call delete(\"$f\")'"
+  printf '%s\n' \
+    'function! OpenPane(p) abort' \
+    '  enew' \
+    '  let c = nvim_open_term(0, {})' \
+    '  call chansend(c, join(readfile(a:p), "\n"))' \
+    '  normal! G' \
+    'endfunction' \
+    "call OpenPane('$f')" \
+    "autocmd VimLeave * call delete('$f') | call delete('$s')" \
+    > "$s"
+  tmux new-window -a -- nvim -S "$s"
 }
