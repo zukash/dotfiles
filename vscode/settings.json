@@ -304,5 +304,10 @@
       "color": "theme.gitDecoration.addedResourceForeground",
       "backgroundColor": "theme.editor.background"
     }
-  }
+  },
+  // ref. https://github.com/vscode-neovim/vscode-neovim/issues/2507
+  "vscode-neovim.afterInitConfig": [
+    "set cmdheight=50"
+  ],
+  "terminal.external.osxExec": "Ghostty.app"
 }
