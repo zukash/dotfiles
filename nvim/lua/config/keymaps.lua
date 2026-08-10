@@ -3,8 +3,8 @@
 -- ========================================
 -- Session management
 -- ========================================
-vim.keymap.set({ "n", "v" }, "<C-x>", ":qa<CR>") -- quit all
-vim.keymap.set("i", "<C-x>", "<ESC>:qa<CR>") -- quit all
+vim.keymap.set({ "n", "v" }, "<C-c>", ":qa<CR>") -- quit all
+vim.keymap.set("i", "<C-c>", "<ESC>:qa<CR>") -- quit all
 
 -- ========================================
 -- Emacs-like editing (movement + kill)
