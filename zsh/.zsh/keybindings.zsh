@@ -1,7 +1,5 @@
 # Key bindings
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '^K' kill-line
+bindkey -e
 
 autoload -Uz edit-command-line
 zle -N edit-command-line

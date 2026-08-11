@@ -1,0 +1,4 @@
+navigator_position = "left"
+
+[keybindings]
+find = ["g"]

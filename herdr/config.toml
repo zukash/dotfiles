@@ -1,0 +1,128 @@
+# ============================================
+# General
+# ============================================
+onboarding = false
+
+# ============================================
+# Theme
+# ============================================
+[theme]
+name = "dracula"
+
+# ============================================
+# UI
+# ============================================
+[ui]
+# タブバーを下に配置 (tmux の status-bar と同じ位置)
+tab_bar_position = "bottom"
+# 新しいタブ作成時に名前を聞かない
+prompt_new_tab_name = false
+# sidebar を起動時から非表示にする
+sidebar_start_collapsed = true
+sidebar_collapsed_mode = "hidden"
+
+[ui.toast]
+delivery = "system"
+
+# ============================================
+# Keybindings
+# ============================================
+[keys]
+prefix = "ctrl+w"
+
+# prefix なしのタブ切り替え (tmux の C-, / C-.)
+previous_tab = "ctrl+comma"
+next_tab = "ctrl+period"
+split_vertical = "cmd+t"
+new_tab = "cmd+n"
+close_pane = "cmd+w"
+
+# ============================================
+# Custom Commands
+# ============================================
+
+# ghq 管理下のリポジトリを選んで herdr ワークスペースを開く
+[[keys.command]]
+key = "cmd+p"
+type = "popup"
+command = """
+  repo_root=$(ghq root) || exit 1
+  repo_label=$(ghq list | fzf --height 100% --layout=reverse) || exit 0
+  repo_path="$repo_root/$repo_label"
+  repo_label=${repo_path#"$repo_root"/*/}
+
+  workspace_id=$(herdr workspace list |
+    jq -r --arg label "$repo_label" \
+      "first(.result.workspaces[] | select(.label == \\$label) | .workspace_id) // empty")
+
+  if [ -n "$workspace_id" ]; then
+    herdr workspace focus "$workspace_id"
+  else
+    herdr workspace create --cwd "$repo_path" --label "$repo_label" --focus
+  fi
+"""
+description = "open ghq repo as herdr workspace"
+width = "50%"
+height = "50%"
+
+# lazygit を pane で開く
+[[keys.command]]
+key = "cmd+g"
+type = "pane"
+command = "lazygit"
+description = "open lazygit"
+
+# Agent 一覧を preview 付きで表示して切り替える
+[[keys.command]]
+key = "cmd+shift+a"
+type = "popup"
+command = """
+  workspace_labels=$(herdr workspace list |
+    jq -c '.result.workspaces | map({key: .workspace_id, value: .label}) | from_entries') || workspace_labels={}
+  selected=$(herdr agent list |
+    jq -r --argjson labels "$workspace_labels" \
+      '.result.agents
+       | sort_by(-.state_change_seq)
+       | .[]
+       | [.pane_id, ("#" + (.state_change_seq | tostring) + ": " + $labels[.workspace_id] + " (" + .agent_status + ")")] | @tsv' |
+    fzf --height 100% --layout=reverse --no-multi \
+      --delimiter="\\t" --with-nth=2 \
+      --preview="herdr pane read {1} --source visible --lines 80 --ansi" \
+     --preview-window=down:70%:nowrap:follow) || exit 0
+
+  pane_id=$(printf '%s\\n' "$selected" | cut -f1)
+  [ -n "$pane_id" ] && herdr agent focus "$pane_id"
+"""
+description = "switch agent with preview"
+width = "100%"
+height = "100%"
+
+# 現在のディレクトリを nvim で開く
+[[keys.command]]
+key = "cmd+i"
+type = "pane"
+command = "nvim ."
+description = "open current directory in nvim"
+
+# focused pane の scrollback を色付きのまま Neovim で表示する
+[[keys.command]]
+key = "cmd+shift+i"
+type = "pane"
+command = """
+tmpfile=$(mktemp) || exit 1
+trap 'rm -f "$tmpfile"' EXIT
+herdr pane read "$HERDR_ACTIVE_PANE_ID" --source recent-unwrapped --lines 10000 --ansi > "$tmpfile"
+nvim -c "terminal cat '$tmpfile'" -c "normal! G"
+"""
+description = "open pane scrollback in nvim"
+
+# herdr-reviewr を pane で開く
+[[keys.command]]
+key = "cmd+r"
+type = "pane"
+command = "herdr-reviewr"
+description = "open herdr reviewr"
+
+# 日本語入力モード中も prefix キーを認識できるよう、prefix 操作中だけ ASCII 入力へ切り替える
+[experimental]
+switch_ascii_input_source_in_prefix = true
