@@ -84,7 +84,7 @@ command = """
       '.result.agents
        | sort_by(-.state_change_seq)
        | .[]
-       | [.pane_id, ("#" + (.state_change_seq | tostring) + ": " + $labels[.workspace_id] + " (" + .agent_status + ")")] | @tsv' |
+       | [.pane_id, ("#" + (.state_change_seq | tostring) + ": " + $labels[.workspace_id] + " / " + (.terminal_title_stripped // .terminal_title // "") + " (" + .agent_status + ")")] | @tsv' |
     fzf --height 100% --layout=reverse --no-multi \
       --delimiter="\\t" --with-nth=2 \
       --preview="herdr pane read {1} --source visible --lines 80 --ansi" \
