@@ -1,5 +1,5 @@
 # Environment variables
-EDITOR='tmux popup -E -w 80% -h 80% nvim'
+export EDITOR='nvim'
 
 FZF_TMUX=1
 FZF_TMUX_OPTS="-p 80%"

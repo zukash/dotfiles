@@ -1,4 +1,8 @@
 # Key bindings
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^K' kill-line
+
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^o' edit-command-line  # Ctrl+o to open editor
