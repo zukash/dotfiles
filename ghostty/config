@@ -9,12 +9,8 @@ font-size = 18
 adjust-cell-height = 30%
 
 # Window
-window-padding-x = 5
-window-padding-y = 5
-
-# Transparency & Effects
-background-opacity = 0.95
-background-blur = 0
+window-padding-x = 15
+window-padding-y = 15
 
 # Behavior
 clipboard-read = allow
@@ -24,8 +20,8 @@ clipboard-write = allow
 shell-integration = detect
 
 # Quick Terminal (Dropdown Terminal)
-quick-terminal-position = top
-quick-terminal-size = 100%, 100%
+quick-terminal-position = center
+quick-terminal-size = 98%, 98%
 quick-terminal-animation-duration = 0.1
 quick-terminal-autohide = true
 
@@ -36,9 +32,13 @@ macos-non-native-fullscreen = true
 macos-titlebar-style = hidden
 
 # Keybindings
-keybind = super+r=reload_config
+# Let Herdr handle Command+T/W instead of Ghostty's tab/surface actions
+keybind = super+t=unbind
+keybind = super+w=unbind
+keybind = super+n=unbind
+keybind = super+shift+r=reload_config
+keybind = super+d=unbind
 # Open config in nvim via tmux popup
-keybind = super+comma=text:nvim ~/.config/ghostty/config\x0d
+keybind = super+,=text:nvim ~/.config/ghostty/config\x0d
 # Toggle quick terminal (global shortcut)
 keybind = global:alt+space=toggle_quick_terminal
-
