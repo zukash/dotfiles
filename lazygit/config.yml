@@ -1,0 +1,12 @@
+# 外部エディター終了後に結果確認の Enter 入力を求めない
+promptToReturnFromSubprocess: false
+
+# Lazygit の編集に Neovim を使用する
+os:
+  editPreset: nvim
+
+# diff の表示に git-delta を使用する
+git:
+  pagers:
+    - colorArg: always
+      pager: delta --paging=never --syntax-theme=ansi
