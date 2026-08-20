@@ -16,6 +16,12 @@ auto_switch = false
 [ui]
 # タブバーを下に配置 (tmux の status-bar と同じ位置)
 tab_bar_position = "bottom"
+# タブバー右側に現在のGit状態とworkspace名を表示
+tab_bar_right = [
+  { type = "command", command = "~/.config/herdr/git-status.sh", interval_seconds = 1, timeout_seconds = 2 },
+  { type = "command", command = "~/.config/herdr/workspace-title.sh", interval_seconds = 2, timeout_seconds = 2 },
+]
+tab_bar_right_separator = " | "
 # 新しいタブ作成時に名前を聞かない
 prompt_new_tab_name = false
 # sidebar を起動時から非表示にする
