@@ -43,6 +43,13 @@ vim.keymap.set("n", "<C-g>", "*N")
 vim.keymap.set("v", "<C-g>", "*N", { remap = true })
 
 -- ========================================
+-- Command palette
+-- ========================================
+vim.keymap.set("n", "<leader>p", function()
+  Snacks.picker.keymaps()
+end, { desc = "Command Palette" })
+
+-- ========================================
 -- Insert-mode helpers (temporary normal-mode actions)
 -- ========================================
 vim.keymap.set("i", "<C-v>", "<C-o>v", { remap = true }) -- enter visual

@@ -21,6 +21,13 @@ return {
           ignored = true,
         },
       },
+      win = {
+        input = {
+          keys = {
+            ["<Esc>"] = { "close", mode = { "i", "n" } },
+          },
+        },
+      },
     },
   },
 }
