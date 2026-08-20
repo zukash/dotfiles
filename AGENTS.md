@@ -1,7 +1,7 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, hammerspoon (macOS only), karabiner (macOS only), nvim, tmux, opencode, ghostty.
+This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, karabiner (macOS only), nvim, tmux, opencode, ghostty.
 
 ## Setup Commands
 - macOS: `mise run setup-mac`
@@ -30,10 +30,6 @@ When adding new configurations or making significant changes:
 - Shell hooks (precmd, preexec, etc.) in hooks.zsh
 - Environment variables in .env (gitignored), load via `export $(grep -v '^#' ~/.zsh/.env | xargs)`
 - Prefer fzf-tmux for interactive selections with `-p 80%` flag
-
-### Lua (Hammerspoon)
-- Modular: separate concerns into files (e.g., notification.lua)
-- Use `hs.` prefix for Hammerspoon APIs
 
 ### Vim (init.vim)
 - Use vim-plug for plugin management

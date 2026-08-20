@@ -34,7 +34,7 @@ mise install
 ## Included
 
 zsh, mise, VS Code, Neovim, tmux, OpenCode, Ghostty, and platform-specific
-Karabiner, Hammerspoon, and AeroSpace configurations.
+Karabiner and AeroSpace configurations.
 
 ## mise
 

@@ -12,6 +12,7 @@ name = "dracula"
 # ============================================
 # UI
 # ============================================
+auto_switch = false
 [ui]
 # タブバーを下に配置 (tmux の status-bar と同じ位置)
 tab_bar_position = "bottom"
@@ -28,7 +29,7 @@ delivery = "system"
 # Keybindings
 # ============================================
 [keys]
-prefix = "ctrl+w"
+prefix = "ctrl+space"
 
 # prefix なしのタブ切り替え (tmux の C-, / C-.)
 previous_tab = "ctrl+comma"
