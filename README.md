@@ -4,52 +4,45 @@ Dotfiles managed with GNU Stow for macOS and Linux.
 
 ## Prerequisites
 
-### macOS
+Install these dependencies using your preferred method:
 
-```sh
-brew install stow fzf
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-```
-
-### Linux
-
-```sh
-# Ubuntu/Debian
-sudo apt install stow fzf
-
-# Fedora
-sudo dnf install stow fzf
-
-# Arch
-sudo pacman -S stow fzf
-
-
-
-git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-```
+- `mise`
+- GNU Stow
+- `fzf`
+- [antidote](https://github.com/mattmc3/antidote)
+- [TPM](https://github.com/tmux-plugins/tpm)
 
 ## Setup
 
-Run the setup script:
+Deploy the dotfiles with mise:
 
 ```sh
 # macOS
-./setup_mac.sh
-
-# Linux
-./setup_linux.sh
+mise run setup-mac
 ```
 
-## Configurations Included
+```sh
+# Linux
+mise run setup-linux
+```
 
-- **zsh**: Shell configuration with antidote plugin manager
-- **vscode**: Editor settings, keybindings, and extensions
-- **karabiner**: Keyboard customization
-- **nvim**: Neovim configuration with vim-plug
-- **tmux**: Terminal multiplexer settings
-- **hammerspoon**: macOS automation scripts
-- **opencode**: OpenCode AI assistant configuration
-- **ghostty**: Terminal emulator configuration
-- **aerospace**: Window manager configuration
+```sh
+# Install tools declared in mise/config.toml
+mise install
+```
+
+## Included
+
+zsh, mise, VS Code, Neovim, tmux, OpenCode, Ghostty, and platform-specific
+Karabiner, Hammerspoon, and AeroSpace configurations.
+
+## mise
+
+`mise/config.toml` manages Bun, Node.js, Deno, Python, and uv. The shell
+integration is enabled automatically by `.zshrc`.
+
+Build the Karabiner configuration with:
+
+```sh
+mise run karabiner:build
+```

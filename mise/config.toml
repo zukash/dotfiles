@@ -1,0 +1,7 @@
+# Global development tools managed by mise.
+[tools]
+bun = "latest"
+python = "latest"
+deno = "latest"
+node = "22"
+uv = "latest"

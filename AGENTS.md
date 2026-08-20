@@ -1,13 +1,13 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, vscode, hammerspoon (macOS only), karabiner (macOS only), nvim, tmux, opencode, ghostty.
+This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, hammerspoon (macOS only), karabiner (macOS only), nvim, tmux, opencode, ghostty.
 
 ## Setup Commands
-- macOS: `./setup_mac.sh`
-- Linux: `./setup_linux.sh`
+- macOS: `mise run setup-mac`
+- Linux: `mise run setup-linux`
 - Deploy specific config manually: `stow -R <folder> -t <target>`
-  - See setup_mac.sh and setup_linux.sh for platform-specific target paths
+  - See the `mise.toml` setup tasks for platform-specific target paths
 
 ## Repository Responsibility
 This repository is responsible ONLY for deploying dotfiles to appropriate locations. Tool installation (stow, fzf, antidote, etc.) is NOT managed by this repository and should be done manually by users.
@@ -18,7 +18,7 @@ No automated tests. Manual validation: source configs and check for errors.
 ## Documentation Maintenance
 When adding new configurations or making significant changes:
 - Update README.md to reflect new tools/configurations
-- Update setup_mac.sh and/or setup_linux.sh with appropriate stow commands
+- Update `mise.toml` with appropriate setup tasks and stow commands
 - Update this file (AGENTS.md) with relevant guidelines
 - ALWAYS update documentation when modifying setup scripts or structure
 

@@ -29,9 +29,5 @@ source <(antidote bundle zukash/zsh-flash)                    # Jump-label navig
 source <(fzf --zsh)
 autoload -Uz compinit && compinit
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# mise: project-local tools, environment variables, and tasks
+eval "$(mise activate zsh)"

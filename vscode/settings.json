@@ -89,7 +89,6 @@
   // =================================
   // Python設定
   // =================================
-  "python.defaultInterpreterPath": "~/.pyenv/shims/python",
   "python.createEnvironment.trigger": "off",
   "python.terminal.activateEnvironment": false,
 
