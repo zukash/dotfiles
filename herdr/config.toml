@@ -22,6 +22,8 @@ tab_bar_right = [
   { type = "command", command = "~/.config/herdr/workspace-title.sh", interval_seconds = 2, timeout_seconds = 2 },
 ]
 tab_bar_right_separator = " | "
+# pane borderにAgent名を表示
+show_agent_labels_on_pane_borders = true
 # 新しいタブ作成時に名前を聞かない
 prompt_new_tab_name = false
 # sidebar を起動時から非表示にする
