@@ -30,7 +30,7 @@ source <(fzf --zsh)
 autoload -Uz compinit && compinit
 
 # bun completions
-[ -s "/Users/zukash/.bun/_bun" ] && source "/Users/zukash/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
