@@ -24,7 +24,6 @@ writeToProfile("Default profile", [
 
   // Emacs-like key bindings
   rule("zukash key bindings").manipulators([
-    map("d", "⌃", "⇧").to("delete_forward").condition(ifNotTerminal),
     map("h", "⌃", "⇧").to("delete_or_backspace").condition(ifNotTerminal),
     map("b", "⌃", "⇧").to("left_arrow").condition(ifNotTerminal),
     map("f", "⌃", "⇧").to("right_arrow").condition(ifNotTerminal),
