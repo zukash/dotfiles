@@ -5,6 +5,7 @@ Dotfiles managed with GNU Stow for macOS and Linux.
 ## Prerequisites
 
 ### macOS
+
 ```sh
 brew install stow fzf
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
@@ -12,6 +13,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 ```
 
 ### Linux
+
 ```sh
 # Ubuntu/Debian
 sudo apt install stow fzf
@@ -21,6 +23,8 @@ sudo dnf install stow fzf
 
 # Arch
 sudo pacman -S stow fzf
+
+
 
 git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-$HOME}/.antidote
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
