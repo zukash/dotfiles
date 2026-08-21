@@ -6,6 +6,7 @@ run = [
   'stow -R vscode -t "$HOME/Library/Application Support/Code/User"',
   'stow -R nvim -t "$HOME/.config/nvim"',
   'stow -R tmux -t "$HOME/.config/tmux"',
+  'stow -R herdr -t "$HOME/.config/herdr"',
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
   'stow -R aerospace -t "$HOME/.config/aerospace"',
@@ -19,6 +20,7 @@ run = [
   'stow -R vscode -t "$HOME/.config/Code/User"',
   'stow -R nvim -t "$HOME/.config/nvim"',
   'stow -R tmux -t "$HOME/.config/tmux"',
+  'stow -R herdr -t "$HOME/.config/herdr"',
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
 ]

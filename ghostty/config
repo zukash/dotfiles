@@ -20,8 +20,8 @@ clipboard-write = allow
 shell-integration = detect
 
 # Quick Terminal (Dropdown Terminal)
-quick-terminal-position = center
-quick-terminal-size = 98%, 98%
+quick-terminal-position = top
+quick-terminal-size = 100%, 100%
 quick-terminal-animation-duration = 0.1
 quick-terminal-autohide = true
 
