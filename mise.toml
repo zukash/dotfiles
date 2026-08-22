@@ -7,6 +7,7 @@ run = [
   'stow -R nvim -t "$HOME/.config/nvim"',
   'stow -R tmux -t "$HOME/.config/tmux"',
   'stow -R herdr -t "$HOME/.config/herdr"',
+  'stow -R yazi -t "$HOME/.config/yazi"',
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
   'stow -R aerospace -t "$HOME/.config/aerospace"',
@@ -21,6 +22,7 @@ run = [
   'stow -R nvim -t "$HOME/.config/nvim"',
   'stow -R tmux -t "$HOME/.config/tmux"',
   'stow -R herdr -t "$HOME/.config/herdr"',
+  'stow -R yazi -t "$HOME/.config/yazi"',
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
 ]

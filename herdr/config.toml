@@ -113,6 +113,15 @@ type = "pane"
 command = "nvim ."
 description = "open current directory in nvim"
 
+# 現在のディレクトリを Yazi の popup で開く
+[[keys.command]]
+key = "cmd+y"
+type = "popup"
+command = "yazi"
+description = "open yazi"
+width = "90%"
+height = "90%"
+
 # focused pane の scrollback を色付きのまま Neovim で表示する
 [[keys.command]]
 key = "cmd+shift+i"
@@ -134,4 +143,5 @@ description = "open herdr reviewr"
 
 # 日本語入力モード中も prefix キーを認識できるよう、prefix 操作中だけ ASCII 入力へ切り替える
 [experimental]
+kitty_graphics = true
 switch_ascii_input_source_in_prefix = true
