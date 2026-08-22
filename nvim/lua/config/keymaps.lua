@@ -38,11 +38,9 @@ vim.keymap.set("i", "<PageDown>", "<C-o><C-d>")
 -- ========================================
 -- Search (word under cursor)
 -- ========================================
-local mc = require("multicursor-nvim")
 vim.keymap.set("i", "<C-g>", "<ESC>*N")
-vim.keymap.set({ "n", "v" }, "<C-g>", function()
-  mc.matchAllAddCursors()
-end, { desc = "Add cursors to all matches" })
+vim.keymap.set("n", "<C-g>", "*N")
+vim.keymap.set("v", "<C-g>", "*N", { remap = true })
 
 -- ========================================
 -- Command palette
