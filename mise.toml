@@ -11,6 +11,7 @@ run = [
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
   'stow -R aerospace -t "$HOME/.config/aerospace"',
+  'stow -R agents -t "$HOME"',
 ]
 
 [tasks.setup-linux]
@@ -25,6 +26,7 @@ run = [
   'stow -R yazi -t "$HOME/.config/yazi"',
   'stow -R opencode -t "$HOME/.config/opencode"',
   'stow -R ghostty -t "$HOME/.config/ghostty"',
+  'stow -R agents -t "$HOME"',
 ]
 
 [tasks."karabiner:build"]

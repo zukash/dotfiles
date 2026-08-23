@@ -1,13 +1,14 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, karabiner (macOS only), nvim, tmux, opencode, ghostty.
+This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, karabiner (macOS only), nvim, tmux, opencode, ghostty, and agent skills.
 
 ## Setup Commands
 - macOS: `mise run setup-mac`
 - Linux: `mise run setup-linux`
 - Deploy specific config manually: `stow -R <folder> -t <target>`
   - See the `mise.toml` setup tasks for platform-specific target paths
+- Agent skills live in the `agents` Stow package and deploy to `~/.agents/skills`.
 
 ## Repository Responsibility
 This repository is responsible ONLY for deploying dotfiles to appropriate locations. Tool installation (stow, fzf, antidote, etc.) is NOT managed by this repository and should be done manually by users.
