@@ -34,7 +34,8 @@ mise install
 ## Included
 
 zsh, mise, VS Code, Neovim, tmux, OpenCode, Ghostty, Yazi, and
-platform-specific Karabiner and AeroSpace configurations.
+platform-specific Karabiner and AeroSpace configurations. Agent skills include
+`hunk-fix`, `hunk-comment`, and `hunk-pr` for working with Hunk review sessions.
 
 ## mise
 

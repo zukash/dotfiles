@@ -9,6 +9,9 @@ This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configu
 - Deploy specific config manually: `stow -R <folder> -t <target>`
   - See the `mise.toml` setup tasks for platform-specific target paths
 - Agent skills live in the `agents` Stow package and deploy to `~/.agents/skills`.
+- Hunk skills are kept under `agents/.agents/skills`: `hunk-fix` applies user
+  feedback, `hunk-comment` adds contextual agent notes, and `hunk-pr` requires
+  note approval before creating a PR with `gh`.
 
 ## Repository Responsibility
 This repository is responsible ONLY for deploying dotfiles to appropriate locations. Tool installation (stow, fzf, antidote, etc.) is NOT managed by this repository and should be done manually by users.
