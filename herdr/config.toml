@@ -134,13 +134,6 @@ nvim -c "terminal cat '$tmpfile'" -c "normal! G"
 """
 description = "open pane scrollback in nvim"
 
-# herdr-reviewr を pane で開く
-[[keys.command]]
-key = "cmd+r"
-type = "pane"
-command = "herdr-reviewr"
-description = "open herdr reviewr"
-
 # 日本語入力モード中も prefix キーを認識できるよう、prefix 操作中だけ ASCII 入力へ切り替える
 [experimental]
 kitty_graphics = true
