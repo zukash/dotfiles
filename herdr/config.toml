@@ -81,6 +81,21 @@ type = "pane"
 command = "lazygit"
 description = "open lazygit"
 
+# Agent の右隣に Hunk の差分監視を開く
+[[keys.command]]
+key = "cmd+r"
+type = "shell"
+command = """
+  pane_id=$("$HERDR_BIN_PATH" pane split \
+    --pane "$HERDR_ACTIVE_PANE_ID" \
+    --direction right \
+    --cwd "$HERDR_ACTIVE_PANE_CWD" \
+    --focus |
+    jq -r '.result.pane.pane_id') || exit 1
+  [ -n "$pane_id" ] && "$HERDR_BIN_PATH" pane run "$pane_id" "hunk diff --watch"
+"""
+description = "open Hunk diff watcher beside agent"
+
 # Agent 一覧を preview 付きで表示して切り替える
 [[keys.command]]
 key = "cmd+shift+a"

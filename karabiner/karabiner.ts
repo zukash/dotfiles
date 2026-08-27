@@ -1,6 +1,4 @@
-import { ifApp, map, modifierLayer, rule, writeToProfile } from "karabiner_ts";
-
-const ifNotTerminal = ifApp(["ghostty"]).unless();
+import { map, modifierLayer, rule, writeToProfile } from "karabiner_ts";
 
 writeToProfile("Default profile", [
   // Aerospace
@@ -24,11 +22,11 @@ writeToProfile("Default profile", [
 
   // Emacs-like key bindings
   rule("zukash key bindings").manipulators([
-    map("h", "⌃", "⇧").to("delete_or_backspace").condition(ifNotTerminal),
-    map("b", "⌃", "⇧").to("left_arrow").condition(ifNotTerminal),
-    map("f", "⌃", "⇧").to("right_arrow").condition(ifNotTerminal),
-    map("n", "⌃", "⇧").to("down_arrow").condition(ifNotTerminal),
-    map("p", "⌃", "⇧").to("up_arrow").condition(ifNotTerminal),
+    map("h", "⌃", "⇧").to("delete_or_backspace"),
+    map("b", "⌃", "⇧").to("left_arrow"),
+    map("f", "⌃", "⇧").to("right_arrow"),
+    map("n", "⌃", "⇧").to("down_arrow"),
+    map("p", "⌃", "⇧").to("up_arrow"),
     // map("n", "⌘⌃", "⇧").to(Array(10).fill({ key_code: "down_arrow" })),
     // map("p", "⌘⌃", "⇧").to(Array(10).fill({ key_code: "up_arrow" })),
     map("n", "⌘⌃", "⇧").to("page_down"),
