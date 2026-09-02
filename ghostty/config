@@ -21,7 +21,7 @@ shell-integration = detect
 
 # Quick Terminal (Dropdown Terminal)
 quick-terminal-position = top
-quick-terminal-size = 100%, 100%
+quick-terminal-size = 99%, 99%
 quick-terminal-animation-duration = 0.1
 quick-terminal-autohide = true
 
@@ -41,4 +41,4 @@ keybind = super+d=unbind
 # Open config in nvim via tmux popup
 keybind = super+,=text:nvim ~/.config/ghostty/config\x0d
 # Toggle quick terminal (global shortcut)
-keybind = global:alt+space=toggle_quick_terminal
+# keybind = global:alt+space=toggle_quick_terminal
