@@ -32,3 +32,7 @@ run = [
 [tasks."karabiner:build"]
 description = "Build Karabiner configuration"
 run = "cd karabiner && deno task build"
+
+[tasks."herdr:link-plugins"]
+description = "Link local Herdr plugins"
+run = 'for plugin in herdr/plugins/*; do [ -f "$plugin/herdr-plugin.toml" ] && herdr plugin link "$plugin"; done'

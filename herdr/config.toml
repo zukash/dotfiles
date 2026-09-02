@@ -31,7 +31,8 @@ sidebar_start_collapsed = true
 sidebar_collapsed_mode = "hidden"
 
 [ui.toast]
-delivery = "system"
+# 通知はlocal click-notify pluginが処理する
+delivery = "off"
 
 # ============================================
 # Keybindings

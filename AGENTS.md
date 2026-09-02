@@ -1,7 +1,7 @@
 # Agent Guidelines for Dotfiles Repository
 
 ## Repository Structure
-This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, karabiner (macOS only), nvim, tmux, opencode, ghostty, and agent skills.
+This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configurations for: zsh, mise, vscode, karabiner (macOS only), nvim, tmux, opencode, ghostty, herdr plugins, and agent skills.
 
 ## Setup Commands
 - macOS: `mise run setup-mac`
@@ -9,6 +9,7 @@ This is a dotfiles repository managed with GNU Stow for macOS and Linux. Configu
 - Deploy specific config manually: `stow -R <folder> -t <target>`
   - See the `mise.toml` setup tasks for platform-specific target paths
 - Agent skills live in the `agents` Stow package and deploy to `~/.agents/skills`.
+- Herdr local plugins live under `herdr/plugins` and are registered with `herdr plugin link`.
 - Hunk skills are kept under `agents/.agents/skills`: `hunk-fix` applies user
   feedback, `hunk-comment` adds contextual agent notes, and `hunk-pr` requires
   note approval before creating a PR with `gh`.

@@ -37,6 +37,12 @@ zsh, mise, VS Code, Neovim, tmux, OpenCode, Ghostty, Yazi, and
 platform-specific Karabiner and AeroSpace configurations. Agent skills include
 `hunk-fix`, `hunk-comment`, and `hunk-pr` for working with Hunk review sessions.
 
+Herdr local plugins are kept under `herdr/plugins/`. Link them with:
+
+```sh
+mise run herdr:link-plugins
+```
+
 ## mise
 
 `mise/config.toml` manages Bun, Node.js, Deno, Python, and uv. The shell
