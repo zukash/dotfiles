@@ -43,6 +43,9 @@ Herdr local plugins are kept under `herdr/plugins/`. Link them with:
 mise run herdr:link-plugins
 ```
 
+`local.pane-app-info` renames the focused pane's tab with its foreground
+application name.
+
 ## mise
 
 `mise/config.toml` manages Bun, Node.js, Deno, Python, and uv. The shell
