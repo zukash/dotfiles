@@ -35,9 +35,10 @@ macos-titlebar-style = hidden
 # Let Herdr handle Command+T/W instead of Ghostty's tab/surface actions
 keybind = super+t=unbind
 keybind = super+w=unbind
-keybind = super+n=unbind
 keybind = super+shift+r=reload_config
 keybind = super+d=unbind
+keybind = super+shift+[=unbind
+keybind = super+shift+]=unbind
 # Open config in nvim via tmux popup
 keybind = super+,=text:nvim ~/.config/ghostty/config\x0d
 # Toggle quick terminal (global shortcut)
